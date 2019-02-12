@@ -1,0 +1,33 @@
+简单工厂模式（Simple Factory）
+简单工厂模式是属于创建型模式，又叫做静态工厂方法（Static Factory Method）模式，简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。
+
+使用场景：
+将new对象交给工厂操作。
+好处：
+1.用户不必关心对象创建过程。
+2.通过修改配置文件就能轻易的改变实现，降低用户与产品的耦合。
+
+变式应用：jdk:Calendar,通过getInstance()获取对象
+
+具体方法：
+创建工厂对象
+1.初始化读取配置文件。
+2.在工厂对象内写一个public的静态方法，返回接口形式的实例。
+
+例子：
+Car.java
+BenzCar.java
+FordCar.java
+HondaCar.java
+
+CarFactory.java
+Family.java
+
+testSimple.java
+config.properties
+
+Car car = CarFactory.getNewCar();
+
+变式应用：
+Student.java
+Student stu = Student.getInstance();

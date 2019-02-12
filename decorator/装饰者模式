@@ -1,0 +1,24 @@
+装饰者模式
+Decorator模式（别名Wrapper）：动态将职责附加到对象上，若要扩展功能，装饰者提供了比继承更具弹性的代替方案。
+
+使用场景：
+普通时候遇到需要拓展一个类的功能时候，通过继承重写相关方法即可实现。（因为继承只能维护拓展其父类）
+在需要拓展一个类多个方法，甚至通过组合方式来拓展时，则应该考虑使用装饰者模式来实现。（装饰者模式能维护拓展一个类或接口的的所有子类）
+
+应用：JDK:IO流，request包装。
+
+具体方法：
+1.继承/实现该类，在其内部创建该类的一个private对象，重写/实现该类所有接口方法（调用该private对象方法），命名为Wrapper*。
+2.各种具体拓展的类（装饰类）通过继承Wrapper类，分别重写来拓展其相应方法。
+3.通过创建该类的对象，层层嵌套，通过该类或其接口接收，实现功能的拓展。
+
+例子（接口形式）：
+IWoman.java（接口）
+Woman.java（要被拓展的类）
+WrapperWoman.java（装饰类的基类）
+（各个拓展的装饰类）
+DressUpWoman.java
+LearnWoman.java
+PoliteWoman.java
+
+IWoman fengjie2 = new LearnWoman(new DressUpWoman(fengjie));

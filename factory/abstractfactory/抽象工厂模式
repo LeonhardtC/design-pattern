@@ -1,0 +1,38 @@
+抽象工厂模式（Abstract Factory Pattern）
+抽象工厂模式是围绕一个超级工厂创建其他工厂。该超级工厂又称为其他工厂的工厂。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+
+使用场景：
+将new对象交给工厂操作。
+第一种:产品的创建由各个产品的工厂提供，不再由一个万能工厂（简单工厂模式）实现，减轻万能工厂的负担，万能工厂只参与产品工厂的选择，完成最后的装配，即工厂的工厂。
+第二种:确定了各个零件工厂的类型，该工厂可以继承第一种万能工厂，初始化各个零件工厂，用户直接调用，不再选择零件工厂。
+
+好处：
+1.用户不必关心对象创建过程。
+2.产品的创建由各个产品的工厂提供，调整各个产品在不同工厂实现，进一步解耦。
+
+具体方法：
+1.创建产品接口与产品
+2.创建相应的产品特有的工厂类
+3.创建产品工厂的工厂，通过
+	a.属性持有
+	b.参数传入
+获取具体工厂对象（采用简单工厂模式），提供获取产品的接口供用户使用。
+
+例子：
+Car.java
+BenzCar.java
+FordCar.java
+HondaCar.java
+
+CarFactory.java
+BenzCarFactory.java
+FordCarFactory.java
+HondaCarFactory.java
+
+SSSS.java
+BenzSSSS.java
+FordSSSS.java
+HondaSSSS.java
+
+Customer.java
+testAbstract.java
