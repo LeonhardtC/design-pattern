@@ -14,6 +14,7 @@ import javax.tools.ToolProvider;
 import lombok.Cleanup;
 import sun.misc.ProxyGenerator;
 
+@SuppressWarnings("restriction")
 public class ClassCreateFlow {
 	
 	private static final String path = "C:/Workplace/learn/DesignPattern/path/";
