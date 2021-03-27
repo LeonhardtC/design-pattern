@@ -1,9 +1,0 @@
-package loader;
-
-public class Coder$Proxy extends Coder{
-
-	public void code(){
-		System.out.println(this+":编码");
-	}
-	
-}
